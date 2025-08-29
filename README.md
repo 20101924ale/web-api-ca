@@ -1,25 +1,26 @@
 # Assignment 2 - Web API.
 
-Name: Your Name
+Name: Alexandra Dinea
 
 ## Features.
 
-A bullet-point list of the ADDITIONAL features you have implemented in the API **THAT WERE NOT IN THE LABS** (or modifications to existing features)
- 
- + Feature 1 
- + Feature 2 
- + Feature 3 
- + etc
+User registration and login
+
+JWT-based authentication
+
+Create, read, update, delete (CRUD) movies and reviews
+
+Search movies by title
 
 ## Setup requirements.
 
-[ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
+"git clone https://github.com/20101924ale/web-api-ca.git
+cd web-api-ca"
+
 
 ## API Configuration
 
 Describe any configuration that needs to take place before running the API. For example, creating an `.env` file and what variables to put in it. Give an example of how this might be done.
-
-REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE README OR ON GITHUB, just placeholders as indicated below:
 
 ______________________
 NODEENV=development
@@ -31,23 +32,23 @@ secret=YourJWTSecret
 ______________________
 
 ## API Design
-Give an overview of your web API design, perhaps similar to the following: 
 
-- /api/movies | GET | Gets a list of movies 
-- /api/movies/{movieid} | GET | Gets a single movie 
-- /api/movies/{movieid}/reviews | GET | Get all reviews for movie 
-- /api/movies/{movieid}/reviews | POST | Create a new review for Movie 
-
-If you have your API design on an online platform or graphic, please link to it (e.g. [Swaggerhub](https://app.swaggerhub.com/)).
+| Endpoint                   | Method | Description                 |
+| -------------------------- | ------ | --------------------------- |
+| `/api/movies`              | GET    | Get all movies              |
+| `/api/movies/{id}`         | GET    | Get a single movie          |
+| `/api/movies/{id}/reviews` | GET    | Get all reviews for a movie |
+| `/api/movies/{id}/reviews` | POST   | Add a review to a movie     |
+| `/api/users/register`      | POST   | Register a new user         |
+| `/api/users/login`         | POST   | Login and get JWT token     |
 
 ## Security and Authentication
 
-Give details of authentication/security implemented on the API (e.g. passport/sessions). Indicate which routes are protected.
+JWT authentication is used for protected routes
+Only logged-in users can add reviews
 
 ## Integrating with React App
 
-Describe how you integrated your React app with the API. List the views that use your Web API instead of the TMDB API. Describe any other updates to the React app from Assignment One.
-
-## Independent learning (if relevant)
-
-Briefly explain any non-standard features developed for the app.   
+- this React app fetches movies and reviews from the API
+- User registration and login views now use the API, in place of external services
+ 
