@@ -26,9 +26,9 @@ ______________________
 NODEENV=development
 PORT=8080
 HOST=
-mongoDB=YourMongoURL
+mongoDB=(mongourl)
 seedDb=true
-secret=YourJWTSecret
+secret=lovecake
 ______________________
 
 ## API Design
